@@ -120,16 +120,10 @@ _G.fkw_navigate_and_split = function(direction)
 
   -- If the window did not change, it means there was no window in the desired direction
   if cur_win == vim.api.nvim_get_current_win() then
-    if direction == 'h' then
+    if direction == 'h' or direction == 'l' then
       vim.cmd('vsplit')
       vim.api.nvim_set_current_win(cur_win)
-    elseif direction == 'l' then
-      vim.cmd('vsplit')
-      vim.api.nvim_set_current_win(cur_win)
-    elseif direction == 'j' then
-      vim.cmd('split')
-      vim.api.nvim_set_current_win(cur_win)
-    elseif direction == 'k' then
+    elseif direction == 'j' or direction == 'k' then
       vim.cmd('split')
       vim.api.nvim_set_current_win(cur_win)
     end
