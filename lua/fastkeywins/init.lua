@@ -11,14 +11,14 @@ M.init_keys = function()
     if Config.options.keychoice == "arrows" then
         _G.fkw_keymaps = {
             split = {
-                {'n', '<A-Up>', '<Cmd>lua _G.fkw_navigate_and_split("k")<CR>', {noremap = true, silent = true}},
-                {'n', '<A-Down>', '<Cmd>lua _G.fkw_navigate_and_split("j")<CR>', {noremap = true, silent = true}},
-                {'n', '<A-Left>', '<Cmd>lua _G.fkw_navigate_and_split("h")<CR>', {noremap = true, silent = true}},
-                {'n', '<A-Right>', '<Cmd>lua _G.fkw_navigate_and_split("l")<CR>', {noremap = true, silent = true}},
-                {'t', '<A-Up>', '<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split("k")<CR>', {noremap = true, silent = true}},
-                {'t', '<A-Down>', '<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split("j")<CR>', {noremap = true, silent = true}},
-                {'t', '<A-Left>', '<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split("h")<CR>', {noremap = true, silent = true}},
-                {'t', '<A-Right>', '<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split("l")<CR>', {noremap = true, silent = true}},
+                {'n', '<M-Up>', '<Cmd>lua _G.fkw_navigate_and_split("k")<CR>', {noremap = true, silent = true}},
+                {'n', '<M-Down>', '<Cmd>lua _G.fkw_navigate_and_split("j")<CR>', {noremap = true, silent = true}},
+                {'n', '<M-Left>', '<Cmd>lua _G.fkw_navigate_and_split("h")<CR>', {noremap = true, silent = true}},
+                {'n', '<M-Right>', '<Cmd>lua _G.fkw_navigate_and_split("l")<CR>', {noremap = true, silent = true}},
+                {'t', '<M-Up>', '<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split("k")<CR>', {noremap = true, silent = true}},
+                {'t', '<M-Down>', '<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split("j")<CR>', {noremap = true, silent = true}},
+                {'t', '<M-Left>', '<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split("h")<CR>', {noremap = true, silent = true}},
+                {'t', '<M-Right>', '<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split("l")<CR>', {noremap = true, silent = true}},
             },
             resize = {
                 {'n', '<C-Up>', '<Cmd>lua _G.fkw_resize_window("Up")<CR>', {noremap = true, silent = true}},
@@ -34,14 +34,14 @@ M.init_keys = function()
     elseif Config.options.keychoice == "hjkl" then
         _G.fkw_keymaps = {
             split = {
-                {'n', '<A-k>', '<Cmd>lua _G.fkw_navigate_and_split("k")<CR>', {noremap = true, silent = true}},
-                {'n', '<A-j>', '<Cmd>lua _G.fkw_navigate_and_split("j")<CR>', {noremap = true, silent = true}},
-                {'n', '<A-h>', '<Cmd>lua _G.fkw_navigate_and_split("h")<CR>', {noremap = true, silent = true}},
-                {'n', '<A-l>', '<Cmd>lua _G.fkw_navigate_and_split("l")<CR>', {noremap = true, silent = true}},
-                {'t', '<A-k>', '<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split("k")<CR>', {noremap = true, silent = true}},
-                {'t', '<A-j>', '<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split("j")<CR>', {noremap = true, silent = true}},
-                {'t', '<A-h>', '<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split("h")<CR>', {noremap = true, silent = true}},
-                {'t', '<A-l>', '<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split("l")<CR>', {noremap = true, silent = true}},
+                {'n', '<M-k>', '<Cmd>lua _G.fkw_navigate_and_split("k")<CR>', {noremap = true, silent = true}},
+                {'n', '<M-j>', '<Cmd>lua _G.fkw_navigate_and_split("j")<CR>', {noremap = true, silent = true}},
+                {'n', '<M-h>', '<Cmd>lua _G.fkw_navigate_and_split("h")<CR>', {noremap = true, silent = true}},
+                {'n', '<M-l>', '<Cmd>lua _G.fkw_navigate_and_split("l")<CR>', {noremap = true, silent = true}},
+                {'t', '<M-k>', '<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split("k")<CR>', {noremap = true, silent = true}},
+                {'t', '<M-j>', '<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split("j")<CR>', {noremap = true, silent = true}},
+                {'t', '<M-h>', '<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split("h")<CR>', {noremap = true, silent = true}},
+                {'t', '<M-l>', '<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split("l")<CR>', {noremap = true, silent = true}},
             },
             resize = {
                 {'n', '<C-k>', '<Cmd>lua _G.fkw_resize_window("Up")<CR>', {noremap = true, silent = true}},
