@@ -4,6 +4,9 @@ local M = {}
 
 M.setup = function(options)
     Config.setup(options)
+    if Config.options.auto_keymap then
+      M.init_keys()
+    end
 end
 
 M.init_keys = function()
