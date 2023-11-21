@@ -101,9 +101,9 @@ function _G.fkw_resize_window(direction)
   local str_fmt = string.format
 
   if direction == 'Up' or direction == 'Down' then
-    increase, decrease = str_fmt('resize +%i', resize_amount), str_fmt('resize -%i, resize_amount)
+    increase, decrease = str_fmt('resize +%i', resize_amount), str_fmt('resize -%i', resize_amount)
   elseif direction == 'Left' or direction == 'Right' then
-    increase, decrease = str_fmt('vertical resize +%i', resize_amount), str_fmt('vertical resize -%i, resize_amount)
+    increase, decrease = str_fmt('vertical resize +%i', resize_amount), str_fmt('vertical resize -%i', resize_amount)
   end
 
   if _G.fkw_is_window_in_direction(({Up = 'k', Down = 'j', Left = 'h', Right = 'l'})[direction]) then
