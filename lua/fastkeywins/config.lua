@@ -2,6 +2,7 @@ local M = {}
 function M.defaults()
     local defaults = {
         keychoice = "arrows", -- "arrows" or "hjkl"
+        auto_setup = false, -- should setup handle keymap generation
         resize_amount = 1, -- default arrow resize amount
         after_split = "", -- "telescope" will run telescope.builtin.find_files()
         terminal_local_keybind = nil, -- key combo string
