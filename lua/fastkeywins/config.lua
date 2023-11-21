@@ -3,7 +3,6 @@ local M = {}
 function M.defaults()
   local defaults = {
     keychoice = "arrows", -- "arrows" or "hjkl"
-    auto_keymap = false, -- should setup handle keymap generation
     resize_amount = 1, -- default arrow resize amount
     after_split = "", -- "telescope" or "mini" supported for find_files/files picker
     terminal_local_keybind = nil, -- key combo string
