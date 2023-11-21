@@ -4,7 +4,7 @@ function M.defaults()
         keychoice = "arrows", -- "arrows" or "hjkl"
         auto_setup = false, -- should setup handle keymap generation
         resize_amount = 1, -- default arrow resize amount
-        after_split = "", -- "telescope" will run telescope.builtin.find_files()
+        after_split = "", -- "telescope" or "mini" supported for find_files/files picker
         terminal_local_keybind = nil, -- key combo string
         terminal_standard_keybind = nil, -- key combo string
         terminal_start_height = 10,
