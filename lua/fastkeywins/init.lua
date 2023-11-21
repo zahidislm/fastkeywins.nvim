@@ -86,7 +86,7 @@ M.init_keys = function()
       },
       {
         "n", "<M-j>", "<Cmd>lua _G.fkw_navigate_and_split('j')<CR>",
-        {{ noremap = true, silent = true, desc = "Move / Create split below" }
+        { noremap = true, silent = true, desc = "Move / Create split below" }
       },
       {
         "n", "<M-h>", "<Cmd>lua _G.fkw_navigate_and_split('h')<CR>",
