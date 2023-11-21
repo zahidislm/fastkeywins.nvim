@@ -141,8 +141,11 @@ _G.fkw_navigate_and_split = function(direction)
     vim.api.nvim_win_set_option(0, 'relativenumber', Config.options.active_win_relativenumber)
     vim.api.nvim_win_set_option(0, 'signcolumn', Config.options.active_win_signcolumn)
     if Config.options.after_split == "telescope" then
-        local builtin = require('telescope.builtin')
-        builtin.find_files()
+      local builtin = require('telescope.builtin')
+      builtin.find_files()
+    elseif Config.options.after_split == "mini" then
+      local builtin = require('mini.pick').builtin
+      builtin.files()
     end
   else
     vim.api.nvim_win_set_option(0, 'number', Config.options.active_win_number)
