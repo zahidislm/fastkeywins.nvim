@@ -43,7 +43,7 @@ M.init_keys = function()
       {
         "t", "<M-Right>", "<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split('l')<CR>",
         { noremap = true, silent = true, desc = "Move / Create termsplit rightward" }
-      }, 
+      },
       {
         "n", "<C-Up>", "<Cmd>lua _G.fkw_resize_window('Up')<CR>",
         { noremap = true, silent = true, desc = "Resize current split up" }
