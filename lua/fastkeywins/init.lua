@@ -96,15 +96,12 @@ end
 function _G.fkw_resize_window(direction)
   local resize_amount = Config.options.resize_amount
   local increase, decrease
+  local str_fmt = string.format
 
-  if direction == 'Up' then
-    increase, decrease = 'resize +' .. tostring(resize_amount), 'resize -' .. tostring(resize_amount)
-  elseif direction == 'Down' then
-    increase, decrease = 'resize +' .. tostring(resize_amount), 'resize -' .. tostring(resize_amount)
-  elseif direction == 'Left' then
-    increase, decrease = 'vertical resize +' .. tostring(resize_amount), 'vertical resize -' .. tostring(resize_amount)
-  elseif direction == 'Right' then
-    increase, decrease = 'vertical resize +' .. tostring(resize_amount), 'vertical resize -' .. tostring(resize_amount)
+  if direction == 'Up' or direction == 'Down' then
+    increase, decrease = str_fmt('resize +%i', resize_amount), str_fmt('resize -%i, resize_amount)
+  elseif direction == 'Left' or direction == 'Right' then
+    increase, decrease = str_fmt('vertical resize +%i', resize_amount), str_fmt('vertical resize -%i, resize_amount)
   end
 
   if _G.fkw_is_window_in_direction(({Up = 'k', Down = 'j', Left = 'h', Right = 'l'})[direction]) then
