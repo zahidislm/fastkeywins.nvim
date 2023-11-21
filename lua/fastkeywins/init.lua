@@ -4,189 +4,190 @@ local M = {}
 
 M.setup = function(options)
   Config.setup(options)
-  if Config.options.auto_keymap then
-    M.init_keys()
-  end
 end
 
 M.init_keys = function()
+  local keymaps = {}
   local str_fmt = string.format
+
   if Config.options.keychoice == "arrows" then
-    _G.fkw_keymaps = {
-      split = {
-        {
-          "n", "<M-Up>", "<Cmd>lua _G.fkw_navigate_and_split('k')<CR>",
-          { noremap = true, silent = true }
-        },
-        {
-          "n", "<M-Down>", "<Cmd>lua _G.fkw_navigate_and_split('j')<CR>",
-          { noremap = true, silent = true }
-        },
-        {
-          "n", "<M-Left>", "<Cmd>lua _G.fkw_navigate_and_split('h')<CR>",
-          { noremap = true, silent = true }
-        },
-        {
-          "n", "<M-Right>", "<Cmd>lua _G.fkw_navigate_and_split('l')<CR>",
-          { noremap = true, silent = true }
-        },
-        {
-          "t", "<M-Up>", "<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split('k')<CR>",
-          { noremap = true, silent = true }
-        },
-        {
-          "t", "<M-Down>", "<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split('j')<CR>",
-          { noremap = true, silent = true }
-        },
-        {
-          "t", "<M-Left>", "<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split('h')<CR>",
-          { noremap = true, silent = true }
-        },
-        {
-          "t", "<M-Right>", "<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split('l')<CR>",
-          { noremap = true, silent = true }
-        }
+    keymaps = {
+      {
+        "n", "<M-Up>", "<Cmd>lua _G.fkw_navigate_and_split('k')<CR>",
+        { noremap = true, silent = true }
       },
-      resize = {
-        {
-          "n", "<C-Up>", "<Cmd>lua _G.fkw_resize_window('Up')<CR>",
-          { noremap = true, silent = true }
-        },
-        {
-          "n", "<C-Down>", "<Cmd>lua _G.fkw_resize_window('Down')<CR>",
-          { noremap = true, silent = true }
-        },
-        {
-          "n", "<C-Left>", "<Cmd>lua _G.fkw_resize_window('Left')<CR>",
-          { noremap = true, silent = true }
-        },
-        {
-          "n", "<C-Right>", "<Cmd>lua _G.fkw_resize_window('Right')<CR>",
-          { noremap = true, silent = true }
-        },
-        {
-          "t", "<C-Up>", "<C-\\><C-n><Cmd>lua _G.fkw_resize_window('Up')<CR>:startinsert<CR>",
-          { noremap = true, silent = true }
-        },
-        {
-          "t", "<C-Down>", "<C-\\><C-n><Cmd>lua _G.fkw_resize_window('Down')<CR>:startinsert<CR>",
-          { noremap = true, silent = true }
-        },
-        {
-          "t", "<Home>", "<C-\\><C-n><Cmd>lua _G.fkw_resize_window('Left')<CR>:startinsert<CR>",
-          { noremap = true, silent = true }
-        },
-        {
-          "t", "<End>", "<C-\\><C-n><Cmd>lua _G.fkw_resize_window('Right')<CR>:startinsert<CR>",
-          { noremap = true, silent = true }
-        }
+      {
+        "n", "<M-Down>", "<Cmd>lua _G.fkw_navigate_and_split('j')<CR>",
+        { noremap = true, silent = true }
+      },
+      {
+        "n", "<M-Left>", "<Cmd>lua _G.fkw_navigate_and_split('h')<CR>",
+        { noremap = true, silent = true }
+      },
+      {
+        "n", "<M-Right>", "<Cmd>lua _G.fkw_navigate_and_split('l')<CR>",
+        { noremap = true, silent = true }
+      },
+      {
+        "t", "<M-Up>", "<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split('k')<CR>",
+        { noremap = true, silent = true }
+      },
+      {
+        "t", "<M-Down>", "<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split('j')<CR>",
+        { noremap = true, silent = true }
+      },
+      {
+        "t", "<M-Left>", "<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split('h')<CR>",
+        { noremap = true, silent = true }
+      },
+      {
+        "t", "<M-Right>", "<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split('l')<CR>",
+        { noremap = true, silent = true }
+      }, 
+      {
+        "n", "<C-Up>", "<Cmd>lua _G.fkw_resize_window('Up')<CR>",
+        { noremap = true, silent = true }
+      },
+      {
+        "n", "<C-Down>", "<Cmd>lua _G.fkw_resize_window('Down')<CR>",
+        { noremap = true, silent = true }
+      },
+      {
+        "n", "<C-Left>", "<Cmd>lua _G.fkw_resize_window('Left')<CR>",
+        { noremap = true, silent = true }
+      },
+      {
+        "n", "<C-Right>", "<Cmd>lua _G.fkw_resize_window('Right')<CR>",
+        { noremap = true, silent = true }
+      },
+      {
+        "t", "<C-Up>", "<C-\\><C-n><Cmd>lua _G.fkw_resize_window('Up')<CR>:startinsert<CR>",
+        { noremap = true, silent = true }
+      },
+      {
+        "t", "<C-Down>", "<C-\\><C-n><Cmd>lua _G.fkw_resize_window('Down')<CR>:startinsert<CR>",
+        { noremap = true, silent = true }
+      },
+      {
+        "t", "<Home>", "<C-\\><C-n><Cmd>lua _G.fkw_resize_window('Left')<CR>:startinsert<CR>",
+        { noremap = true, silent = true }
+      },
+      {
+        "t", "<End>", "<C-\\><C-n><Cmd>lua _G.fkw_resize_window('Right')<CR>:startinsert<CR>",
+        { noremap = true, silent = true }
       }
     }
 
   elseif Config.options.keychoice == "hjkl" then
-    _G.fkw_keymaps = {
-      split = {
-        {
-          "n", "<M-k>", "<Cmd>lua _G.fkw_navigate_and_split('k')<CR>",
-          { noremap = true, silent = true }
-        },
-        {
-          "n", "<M-j>", "<Cmd>lua _G.fkw_navigate_and_split('j')<CR>",
-          { noremap = true, silent = true }
-        },
-        {
-          "n", "<M-h>", "<Cmd>lua _G.fkw_navigate_and_split('h')<CR>",
-          { noremap = true, silent = true }
-        },
-        {
-          "n", "<M-l>", "<Cmd>lua _G.fkw_navigate_and_split('l')<CR>",
-          { noremap = true, silent = true }
-        },
-        {
-          "t", "<M-k>", "<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split('k')<CR>",
-          { noremap = true, silent = true }
-        },
-        {
-          "t", "<M-j>", "<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split('j')<CR>",
-          { noremap = true, silent = true }
-        },
-        {
-          "t", "<M-h>", "<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split('h')<CR>",
-          { noremap = true, silent = true }
-        },
-        {
-          "t", "<M-l>", "<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split('l')<CR>",
-          { noremap = true, silent = true }
-        }
+    keymaps = {
+      {
+        "n", "<M-k>", "<Cmd>lua _G.fkw_navigate_and_split('k')<CR>",
+        { noremap = true, silent = true }
       },
-      resize = {
-        {
-          "n", "<C-k>", "<Cmd>lua _G.fkw_resize_window('Up')<CR>",
-          { noremap = true, silent = true }
-        },
-        {
-          "n", "<C-j>", "<Cmd>lua _G.fkw_resize_window('Down')<CR>",
-          { noremap = true, silent = true }
-        },
-        {
-          "n", "<C-h>", "<Cmd>lua _G.fkw_resize_window('Left')<CR>",
-          { noremap = true, silent = true }
-        },
-        {
-          "n", "<C-l>", "<Cmd>lua _G.fkw_resize_window('Right')<CR>",
-          { noremap = true, silent = true }
-        },
-        {
-          "t", "<C-k>", "<C-\\><C-n><Cmd>lua _G.fkw_resize_window('Up')<CR>:startinsert<CR>",
-          { noremap = true, silent = true }
-        },
-        {
-          "t", "<C-j>", "<C-\\><C-n><Cmd>lua _G.fkw_resize_window('Down')<CR>:startinsert<CR>",
-          { noremap = true, silent = true }
-        },
-        {
-          "t", "<C-h>", "<C-\\><C-n><Cmd>lua _G.fkw_resize_window('Left')<CR>:startinsert<CR>",
-          { noremap = true, silent = true }
-        },
-        {
-          "t", "<C-l>", "<C-\\><C-n><Cmd>lua _G.fkw_resize_window('Right')<CR>:startinsert<CR>",
-          { noremap = true, silent = true }
-        }
+      {
+        "n", "<M-j>", "<Cmd>lua _G.fkw_navigate_and_split('j')<CR>",
+        { noremap = true, silent = true }
+      },
+      {
+        "n", "<M-h>", "<Cmd>lua _G.fkw_navigate_and_split('h')<CR>",
+        { noremap = true, silent = true }
+      },
+      {
+        "n", "<M-l>", "<Cmd>lua _G.fkw_navigate_and_split('l')<CR>",
+        { noremap = true, silent = true }
+      },
+      {
+        "t", "<M-k>", "<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split('k')<CR>",
+        { noremap = true, silent = true }
+      },
+      {
+        "t", "<M-j>", "<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split('j')<CR>",
+        { noremap = true, silent = true }
+      },
+      {
+        "t", "<M-h>", "<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split('h')<CR>",
+        { noremap = true, silent = true }
+      },
+      {
+        "t", "<M-l>", "<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split('l')<CR>",
+        { noremap = true, silent = true }
+      },
+      {
+        "n", "<C-k>", "<Cmd>lua _G.fkw_resize_window('Up')<CR>",
+        { noremap = true, silent = true }
+      },
+      {
+        "n", "<C-j>", "<Cmd>lua _G.fkw_resize_window('Down')<CR>",
+        { noremap = true, silent = true }
+      },
+      {
+        "n", "<C-h>", "<Cmd>lua _G.fkw_resize_window('Left')<CR>",
+        { noremap = true, silent = true }
+      },
+      {
+        "n", "<C-l>", "<Cmd>lua _G.fkw_resize_window('Right')<CR>",
+        { noremap = true, silent = true }
+      },
+      {
+        "t", "<C-k>", "<C-\\><C-n><Cmd>lua _G.fkw_resize_window('Up')<CR>:startinsert<CR>",
+        { noremap = true, silent = true }
+      },
+      {
+        "t", "<C-j>", "<C-\\><C-n><Cmd>lua _G.fkw_resize_window('Down')<CR>:startinsert<CR>",
+        { noremap = true, silent = true }
+      },
+      {
+        "t", "<C-h>", "<C-\\><C-n><Cmd>lua _G.fkw_resize_window('Left')<CR>:startinsert<CR>",
+        { noremap = true, silent = true }
+      },
+      {
+        "t", "<C-l>", "<C-\\><C-n><Cmd>lua _G.fkw_resize_window('Right')<CR>:startinsert<CR>",
+        { noremap = true, silent = true }
       }
     }
   end
 
-  for _, keymap in ipairs(_G.fkw_keymaps.split) do
-    vim.api.nvim_set_keymap(unpack(keymap))
-  end
-
-  for _, keymap in ipairs(_G.fkw_keymaps.resize) do
-    vim.api.nvim_set_keymap(unpack(keymap))
-  end
-
   if Config.options.terminal_local_keybind then
-    vim.api.nvim_set_keymap("n", Config.options.terminal_local_keybind,
+    local keymap = {
+      "n", Config.options.terminal_local_keybind,
       str_fmt("<Cmd>lua require('fastkeywins').open_terminal_in_current_buffer_dir(' %i ')<CR>", Config.options.terminal_start_height),
-      { silent = true })
+      { silent = true }
+    }
+
+    vim.list_extend(keymaps, { keymap })
   end
 
   if Config.options.terminal_standard_keybind then
-    vim.api.nvim_set_keymap("n", Config.options.terminal_standard_keybind,
+    local keymap = {
+      "n", Config.options.terminal_standard_keybind,
       str_fmt("<Cmd>lua require('fastkeywins').open_terminal_standard(' %i ')<CR>", Config.options.terminal_start_height),
-      { silent = true })
+      { silent = true }
+    }
+
+    vim.list_extend(keymaps, { keymap })
   end
 
   if Config.options.toggle_minimize_keybind then
-    vim.api.nvim_set_keymap("n", Config.options.toggle_minimize_keybind,
+    local keymap = {
+      "n", Config.options.toggle_minimize_keybind,
       "<Cmd>lua require('fastkeywins').toggle_minimize_window()<CR>",
-      { silent = true })
+      { silent = true }
+    }
+
+    vim.list_extend(keymaps, { keymap })
   end
 
   if Config.options.toggle_minimize_keybind_force_hz then
-    vim.api.nvim_set_keymap("n", Config.options.toggle_minimize_keybind_force_hz,
+    local keymap = {
+      "n", Config.options.toggle_minimize_keybind_force_hz,
       "<Cmd>lua require('fastkeywins').toggle_minimize_window(true)<CR>",
-      { silent = true })
+      { silent = true }
+    }
+
+    vim.list_extend(keymaps, { keymap })
   end
+
+  return keymaps
 end
 
 function _G.fkw_is_window_in_direction(direction)
