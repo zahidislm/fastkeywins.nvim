@@ -13,145 +13,145 @@ M.init_keys = function()
   if Config.options.keychoice == "arrows" then
     keymaps = {
       {
-        "n", "<M-Up>", "<Cmd>lua _G.fkw_navigate_and_split('k')<CR>",
-        { noremap = true, silent = true, desc = "Move / Create split above" }
+        "<M-Up>", "<Cmd>lua _G.fkw_navigate_and_split('k')<CR>",
+        noremap = true, silent = true, desc = "Move / Create split above"
       },
       {
-        "n", "<M-Down>", "<Cmd>lua _G.fkw_navigate_and_split('j')<CR>",
-        { noremap = true, silent = true, desc = "Move / Create split below" }
+        "<M-Down>", "<Cmd>lua _G.fkw_navigate_and_split('j')<CR>",
+        noremap = true, silent = true, desc = "Move / Create split below"
       },
       {
-        "n", "<M-Left>", "<Cmd>lua _G.fkw_navigate_and_split('h')<CR>",
-        { noremap = true, silent = true, desc = "Move / Create split leftward" }
+        "<M-Left>", "<Cmd>lua _G.fkw_navigate_and_split('h')<CR>",
+        noremap = true, silent = true, desc = "Move / Create split leftward"
       },
       {
-        "n", "<M-Right>", "<Cmd>lua _G.fkw_navigate_and_split('l')<CR>",
-        { noremap = true, silent = true, desc = "Move / Create split rightward" }
+        "<M-Right>", "<Cmd>lua _G.fkw_navigate_and_split('l')<CR>",
+        noremap = true, silent = true, desc = "Move / Create split rightward"
       },
       {
-        "t", "<M-Up>", "<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split('k')<CR>",
-        { noremap = true, silent = true, desc = "Move / Create termsplit above" }
+        "<M-Up>", "<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split('k')<CR>",
+        mode = "t", noremap = true, silent = true, desc = "Move / Create termsplit above"
       },
       {
-        "t", "<M-Down>", "<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split('j')<CR>",
-        { noremap = true, silent = true, desc = "Move / Create termsplit below" }
+        "<M-Down>", "<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split('j')<CR>",
+        mode = "t", noremap = true, silent = true, desc = "Move / Create termsplit below"
       },
       {
-        "t", "<M-Left>", "<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split('h')<CR>",
-        { noremap = true, silent = true, desc = "Move / Create termsplit leftward" }
+        "<M-Left>", "<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split('h')<CR>",
+        mode = "t", noremap = true, silent = true, desc = "Move / Create termsplit leftward"
       },
       {
-        "t", "<M-Right>", "<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split('l')<CR>",
-        { noremap = true, silent = true, desc = "Move / Create termsplit rightward" }
+        "<M-Right>", "<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split('l')<CR>",
+        mode = "t", noremap = true, silent = true, desc = "Move / Create termsplit rightward"
       },
       {
-        "n", "<C-Up>", "<Cmd>lua _G.fkw_resize_window('Up')<CR>",
-        { noremap = true, silent = true, desc = "Resize current split up" }
+        "<C-Up>", "<Cmd>lua _G.fkw_resize_window('Up')<CR>",
+        noremap = true, silent = true, desc = "Resize current split up"
       },
       {
-        "n", "<C-Down>", "<Cmd>lua _G.fkw_resize_window('Down')<CR>",
-        { noremap = true, silent = true, desc = "Resize current split down" }
+        "<C-Down>", "<Cmd>lua _G.fkw_resize_window('Down')<CR>",
+        noremap = true, silent = true, desc = "Resize current split down"
       },
       {
-        "n", "<C-Left>", "<Cmd>lua _G.fkw_resize_window('Left')<CR>",
-        { noremap = true, silent = true, desc = "Resize current split leftward" }
+        "<C-Left>", "<Cmd>lua _G.fkw_resize_window('Left')<CR>",
+        noremap = true, silent = true, desc = "Resize current split leftward"
       },
       {
-        "n", "<C-Right>", "<Cmd>lua _G.fkw_resize_window('Right')<CR>",
-        { noremap = true, silent = true, desc = "Resize current split rightward" }
+        "<C-Right>", "<Cmd>lua _G.fkw_resize_window('Right')<CR>",
+        noremap = true, silent = true, desc = "Resize current split rightward"
       },
       {
-        "t", "<C-Up>", "<C-\\><C-n><Cmd>lua _G.fkw_resize_window('Up')<CR>:startinsert<CR>",
-        { noremap = true, silent = true, desc = "Resize current termsplit up" }
+        "<C-Up>", "<C-\\><C-n><Cmd>lua _G.fkw_resize_window('Up')<CR>:startinsert<CR>",
+        mode = "t", noremap = true, silent = true, desc = "Resize current termsplit up"
       },
       {
-        "t", "<C-Down>", "<C-\\><C-n><Cmd>lua _G.fkw_resize_window('Down')<CR>:startinsert<CR>",
-        { noremap = true, silent = true, desc = "Resize current termsplit down" }
+        "<C-Down>", "<C-\\><C-n><Cmd>lua _G.fkw_resize_window('Down')<CR>:startinsert<CR>",
+        mode = "t", noremap = true, silent = true, desc = "Resize current termsplit down"
       },
       {
-        "t", "<Home>", "<C-\\><C-n><Cmd>lua _G.fkw_resize_window('Left')<CR>:startinsert<CR>",
-        { noremap = true, silent = true, desc = "Resize current termsplit leftward" }
+        "<Home>", "<C-\\><C-n><Cmd>lua _G.fkw_resize_window('Left')<CR>:startinsert<CR>",
+        mode = "t", noremap = true, silent = true, desc = "Resize current termsplit leftward"
       },
       {
-        "t", "<End>", "<C-\\><C-n><Cmd>lua _G.fkw_resize_window('Right')<CR>:startinsert<CR>",
-        { noremap = true, silent = true, desc = "Resize current termsplit rightward" }
+        "<End>", "<C-\\><C-n><Cmd>lua _G.fkw_resize_window('Right')<CR>:startinsert<CR>",
+        mode = "t", noremap = true, silent = true, desc = "Resize current termsplit rightward"
       }
     }
 
   elseif Config.options.keychoice == "hjkl" then
     keymaps = {
       {
-        "n", "<M-k>", "<Cmd>lua _G.fkw_navigate_and_split('k')<CR>",
-        { noremap = true, silent = true, desc = "Move / Create split above" }
+        "<M-k>", "<Cmd>lua _G.fkw_navigate_and_split('k')<CR>",
+        noremap = true, silent = true, desc = "Move / Create split above"
       },
       {
-        "n", "<M-j>", "<Cmd>lua _G.fkw_navigate_and_split('j')<CR>",
-        { noremap = true, silent = true, desc = "Move / Create split below" }
+        "<M-j>", "<Cmd>lua _G.fkw_navigate_and_split('j')<CR>",
+        noremap = true, silent = true, desc = "Move / Create split below"
       },
       {
-        "n", "<M-h>", "<Cmd>lua _G.fkw_navigate_and_split('h')<CR>",
-        { noremap = true, silent = true, desc = "Move / Create split leftward" }
+        "<M-h>", "<Cmd>lua _G.fkw_navigate_and_split('h')<CR>",
+        noremap = true, silent = true, desc = "Move / Create split leftward"
       },
       {
-        "n", "<M-l>", "<Cmd>lua _G.fkw_navigate_and_split('l')<CR>",
-        { noremap = true, silent = true, desc = "Move / Create split rightward" }
+        "<M-l>", "<Cmd>lua _G.fkw_navigate_and_split('l')<CR>",
+        noremap = true, silent = true, desc = "Move / Create split rightward"
       },
       {
-        "t", "<M-k>", "<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split('k')<CR>",
-        { noremap = true, silent = true, desc = "Move / Create termsplit above" }
+        "<M-k>", "<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split('k')<CR>",
+        mode = "t", noremap = true, silent = true, desc = "Move / Create termsplit above"
       },
       {
-        "t", "<M-j>", "<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split('j')<CR>",
-        { noremap = true, silent = true, desc = "Move / Create termsplit below" }
+        "<M-j>", "<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split('j')<CR>",
+        mode = "t", noremap = true, silent = true, desc = "Move / Create termsplit below"
       },
       {
-        "t", "<M-h>", "<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split('h')<CR>",
-        { noremap = true, silent = true, desc = "Move / Create termsplit leftward" }
+        "<M-h>", "<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split('h')<CR>",
+        mode = "t", noremap = true, silent = true, desc = "Move / Create termsplit leftward"
       },
       {
-        "t", "<M-l>", "<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split('l')<CR>",
-        { noremap = true, silent = true, desc = "Move / Create termsplit rightward" }
+        "<M-l>", "<C-\\><C-n><Cmd>lua _G.fkw_navigate_and_split('l')<CR>",
+        mode = "t", noremap = true, silent = true, desc = "Move / Create termsplit rightward"
       },
       {
-        "n", "<C-k>", "<Cmd>lua _G.fkw_resize_window('Up')<CR>",
-        { noremap = true, silent = true, desc = "Resize current split up" }
+        "<C-k>", "<Cmd>lua _G.fkw_resize_window('Up')<CR>",
+        noremap = true, silent = true, desc = "Resize current split up"
       },
       {
-        "n", "<C-j>", "<Cmd>lua _G.fkw_resize_window('Down')<CR>",
-        { noremap = true, silent = true, desc = "Resize current split down" }
+        "<C-j>", "<Cmd>lua _G.fkw_resize_window('Down')<CR>",
+        noremap = true, silent = true, desc = "Resize current split down"
       },
       {
-        "n", "<C-h>", "<Cmd>lua _G.fkw_resize_window('Left')<CR>",
-        { noremap = true, silent = true, desc = "Resize current split leftward" }
+        "<C-h>", "<Cmd>lua _G.fkw_resize_window('Left')<CR>",
+        noremap = true, silent = true, desc = "Resize current split leftward"
       },
       {
-        "n", "<C-l>", "<Cmd>lua _G.fkw_resize_window('Right')<CR>",
-        { noremap = true, silent = true, desc = "Resize current split rightward" }
+        "<C-l>", "<Cmd>lua _G.fkw_resize_window('Right')<CR>",
+        noremap = true, silent = true, desc = "Resize current split rightward"
       },
       {
-        "t", "<C-k>", "<C-\\><C-n><Cmd>lua _G.fkw_resize_window('Up')<CR>:startinsert<CR>",
-        { noremap = true, silent = true, desc = "Resize current termsplit up" }
+        "<C-k>", "<C-\\><C-n><Cmd>lua _G.fkw_resize_window('Up')<CR>:startinsert<CR>",
+        mode = "t", noremap = true, silent = true, desc = "Resize current termsplit up"
       },
       {
-        "t", "<C-j>", "<C-\\><C-n><Cmd>lua _G.fkw_resize_window('Down')<CR>:startinsert<CR>",
-        { noremap = true, silent = true, desc = "Resize current termsplit down" }
+        "<C-j>", "<C-\\><C-n><Cmd>lua _G.fkw_resize_window('Down')<CR>:startinsert<CR>",
+        mode = "t", noremap = true, silent = true, desc = "Resize current termsplit down"
       },
       {
-        "t", "<C-h>", "<C-\\><C-n><Cmd>lua _G.fkw_resize_window('Left')<CR>:startinsert<CR>",
-        { noremap = true, silent = true, desc = "Resize current termsplit leftward" }
+        "<C-h>", "<C-\\><C-n><Cmd>lua _G.fkw_resize_window('Left')<CR>:startinsert<CR>",
+        mode = "t", noremap = true, silent = true, desc = "Resize current termsplit leftward"
       },
       {
-        "t", "<C-l>", "<C-\\><C-n><Cmd>lua _G.fkw_resize_window('Right')<CR>:startinsert<CR>",
-        { noremap = true, silent = true, desc = "Resize current termsplit rightward" }
+        "<C-l>", "<C-\\><C-n><Cmd>lua _G.fkw_resize_window('Right')<CR>:startinsert<CR>",
+        mode = "t", noremap = true, silent = true, desc = "Resize current termsplit rightward"
       }
     }
   end
 
   if Config.options.terminal_local_keybind then
     local keymap = {
-      "n", Config.options.terminal_local_keybind,
+      Config.options.terminal_local_keybind,
       str_fmt("<Cmd>lua require('fastkeywins').open_terminal_in_current_buffer_dir(' %i ')<CR>", Config.options.terminal_start_height),
-      { silent = true }
+      silent = true, desc = "Open terminal <CWD>"
     }
 
     vim.list_extend(keymaps, { keymap })
@@ -159,9 +159,9 @@ M.init_keys = function()
 
   if Config.options.terminal_standard_keybind then
     local keymap = {
-      "n", Config.options.terminal_standard_keybind,
+      Config.options.terminal_standard_keybind,
       str_fmt("<Cmd>lua require('fastkeywins').open_terminal_standard(' %i ')<CR>", Config.options.terminal_start_height),
-      { silent = true }
+      silent = true, desc = "Open terminal <WS>"
     }
 
     vim.list_extend(keymaps, { keymap })
@@ -169,9 +169,9 @@ M.init_keys = function()
 
   if Config.options.toggle_minimize_keybind then
     local keymap = {
-      "n", Config.options.toggle_minimize_keybind,
+      Config.options.toggle_minimize_keybind,
       "<Cmd>lua require('fastkeywins').toggle_minimize_window()<CR>",
-      { silent = true }
+      silent = true, desc = "Toggle terminal window"
     }
 
     vim.list_extend(keymaps, { keymap })
@@ -179,9 +179,9 @@ M.init_keys = function()
 
   if Config.options.toggle_minimize_keybind_force_hz then
     local keymap = {
-      "n", Config.options.toggle_minimize_keybind_force_hz,
+      Config.options.toggle_minimize_keybind_force_hz,
       "<Cmd>lua require('fastkeywins').toggle_minimize_window(true)<CR>",
-      { silent = true }
+      silent = true
     }
 
     vim.list_extend(keymaps, { keymap })
